@@ -29,7 +29,7 @@ return [
     |
     */
 
-    'host' => env('MAIL_HOST', 'smtp.mailgun.org'),
+    'host' => env('MAIL_HOST', 'relay.skynet.be'),
 
     /*
     |--------------------------------------------------------------------------
@@ -87,6 +87,8 @@ return [
     'username' => env('MAIL_USERNAME'),
 
     'password' => env('MAIL_PASSWORD'),
+
+    'from' => ['address' => 'michael.pitz@cf2m.be', 'name' => 'Administrateur'],
 
     /*
     |--------------------------------------------------------------------------
