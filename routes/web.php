@@ -14,15 +14,23 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
 Route::get('{n}', function($n) {
     return 'Je suis la page ' . $n . ' !';
 })->where('n', '[1-3]');
+
 Route::get('/v1', function () {
     return view('vue1');
 });
+
 Route::get('article/{n}', function($n) {
     return view('article')->with('numero', $n);
 })->where('n', '[0-9]+');
+
 Route::get('facture/{n}', function($n) {
     return view('facture')->withNumero($n);
 })->where('n', '[0-9]+');
+
+Route::get('/welcome/', ['uses' => 'WelcomeController@index', 'as' => 'home']);
+
+Route::get('art/{n}', 'ArticleController@show')->where('n', '[0-9]+');
