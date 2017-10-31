@@ -34,3 +34,6 @@ Route::get('facture/{n}', function($n) {
 Route::get('/welcome/', ['uses' => 'WelcomeController@index', 'as' => 'home']);
 
 Route::get('art/{n}', 'ArticleController@show')->where('n', '[0-9]+');
+
+Route::get('users', 'UsersController@getInfos');
+Route::post('users', 'UsersController@postInfos');
